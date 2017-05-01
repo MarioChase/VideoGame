@@ -1,0 +1,4 @@
+TestHero
+Golem
+Imp
+FancyStats

@@ -1,14 +1,20 @@
 
 public class Golem extends Enemy {
-	  public Golem(int x, int y, int w, int h, int dX, int dY)
+	 /* public Golem(int x, int y, int w, int h, int dX, int dY)
 	  {
 	    super("elf.png", x, y, 65, 85, dX, dY);
 	    loadImages("./GolemImages.txt");
 	    animate(0);
-	    pattern = new Wandering();
+	    pattern = new Patrol();
 	    
 	  }
-
+*/
+	  public Golem(){
+		  loadImages("./GolemImages.txt");
+		  	health = 500;
+		    animate(0);
+		    pattern = new Wandering();
+	  }
 	@Override
 	public void tick(int maxw, int maxh) {
 		m_ticks ++;

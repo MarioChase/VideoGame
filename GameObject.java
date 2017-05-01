@@ -14,7 +14,7 @@ public abstract class GameObject implements IGameObject {
 	protected int m_dX; // x velocity in pixels per interval
 	protected int m_dY; // y velocity in pixels per intercal
 
-	public GameObject(String image, int x, int y, int w, int h, int dX, int dY) {
+/*	public GameObject(String image, int x, int y, int w, int h, int dX, int dY) {
 		m_x = x;
 		m_y = y;
 		m_w = w;
@@ -22,6 +22,15 @@ public abstract class GameObject implements IGameObject {
 		m_dX = dX;
 		m_dY = dY;
 		setImage(image);
+	}*/
+	public GameObject(){}
+	public void setConstructor(int x, int y, int w, int h, int dX, int dY){
+		m_x = x;
+		m_y = y;
+		m_w = w;
+		m_h = h;
+		m_dX = dX;
+		m_dY = dY;
 	}
 	public void setImage(String image_name){
 		try {

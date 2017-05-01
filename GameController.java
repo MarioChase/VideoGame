@@ -1,5 +1,8 @@
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+
+import com.sun.scenario.Settings;
+
 import java.awt.event.*;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -13,11 +16,13 @@ public class GameController implements ActionListener, IGameController, KeyListe
 	private Timer m_timer;
 	private List<IGameObject> m_objects;
 	private List<IGameView> m_views;
+	private List<String> m_settings;
 	public Hero player;
 
-	public GameController(int interval, List<IGameObject> objects, List<IGameView> views) {
+	public GameController(int interval, List<IGameObject> objects, List<IGameView> views, List<String> settings) {
 		m_objects = objects;
 		m_views = views;
+		m_settings = settings;
 		m_timer = new Timer(interval, this);
 		views.get(0).getJPanel().addKeyListener(this);
 		for (IGameObject obj : m_objects) {
@@ -42,7 +47,7 @@ public class GameController implements ActionListener, IGameController, KeyListe
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		boolean enemy_left = false;
+		boolean enemy_left = true;
 		for (Iterator<IGameObject> it = m_objects.iterator(); it.hasNext();) {
 			IGameObject obj = it.next();
 			obj.tick(m_views.get(0).getWidth(), m_views.get(0).getHeight());
@@ -53,7 +58,13 @@ public class GameController implements ActionListener, IGameController, KeyListe
 				}
 			}
 			if (obj.getType().equalsIgnoreCase("enemy")) {
+				Enemy placeholder = (Enemy) obj;
+				placeholder.setTarget(player);
+				if(placeholder.getHealth() < 1){
+					it.remove();
+				}
 				enemy_left = true;
+				
 			}
 			for (IGameObject c_obj : m_objects) {
 				if (c_obj != obj) {
@@ -61,9 +72,15 @@ public class GameController implements ActionListener, IGameController, KeyListe
 					obj.collisionAction(c_obj);}
 				}
 			}
+			
+
 		}
 
 		for (IGameView obj : m_views) {
+			if(player.m_ticks % 50 == 0){
+				m_objects.add((Factory.getInstance().createEnemy(100, 100, 30, 50, 5, 5, m_settings.get(1))));
+				m_objects.add((Factory.getInstance().createEnemy(100, 100, 30, 50, 5, 5, m_settings.get(2))));
+			}
 			obj.tick();
 		}
 		if(enemy_left == false){

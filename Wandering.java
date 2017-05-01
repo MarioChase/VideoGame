@@ -1,6 +1,9 @@
 import java.util.Random;
 
 public class Wandering extends AttackPattern {
+	public Wandering() {
+		// TODO Auto-generated constructor stub
+	}
 	Random r = new Random();
 	@Override
 	public void Movement(Enemy a, int tick) {
@@ -40,6 +43,6 @@ public class Wandering extends AttackPattern {
 			a.setY(a.getY() - 5);
 			break;
 		}
-		a.animate(tick % (a.move.size() / 4) + (interval) * a.facing);
+		a.animate(tick % (a.move.size() / 4) + ((interval) * a.facing));
 	}
 }

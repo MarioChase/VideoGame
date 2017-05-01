@@ -1,23 +1,22 @@
 
 public class Spider extends Enemy{
-	public Spider(int x, int y, int w, int h, int dX, int dY)
+/*	public Spider(int x, int y, int w, int h, int dX, int dY)
 	  {
 	    super("elf.png", x, y, 50, 50, dX, dY);
-	    loadImages("./SpiderImages.txt");
-	    animate(0);
-	    pattern = new Follow();
-	    
-	  }
-
+	   
+	  }*/
+	public Spider(){
+		 loadImages("./SpiderImages.txt");
+		    animate(0);
+		    health = 25;
+		    pattern = new Patrol();
+	}
 	@Override
 	public void tick(int maxw, int maxh) {
 		// TODO Auto-generated method stub
 		m_ticks ++;
 		pattern.Movement(this, m_ticks);
 	    wrapAround(maxw,maxh);
-		
-		
-		
 	}
 
 	@Override

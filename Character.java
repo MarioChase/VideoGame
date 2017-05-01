@@ -13,11 +13,11 @@ public abstract class Character extends GameObject
   protected int health;
   protected ArrayList<String> move = new ArrayList<String>();
   protected int facing = 0;
-  public Character(String sprite, int x, int y, int w, int h, int dX, int dY)
+/*  public Character(String sprite, int x, int y, int w, int h, int dX, int dY)
   {
     super(sprite, x, y, w, h, dX, dY);
-  }
-
+  }*/
+  public Character(){}
   @Override
   abstract public void tick(int maxw, int maxh);
   public void animate(int frame) {

@@ -14,6 +14,7 @@ public interface IGameObject
   public int getH();
   public int getDX();
   public int getDY();
+  public void setConstructor(int x, int y, int w, int h, int dX, int dY);
   public boolean hasCollided(IGameObject a);
   public void collisionAction(IGameObject a);
   public String getType();

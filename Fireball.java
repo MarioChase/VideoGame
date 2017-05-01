@@ -1,15 +1,13 @@
 
-public class NullProjectile extends Projectile {
-	IAttackPattern pattern = new Patrol();
+public class Fireball extends Projectile {
 
-	/*public NullProjectile(String image, int x, int y, int w, int h, int dX, int dY, int facing) {
-		super(image, x, y, w, h, dX, dY, facing);
+/*	public Fireball(int x, int y, int w, int h, int dX, int dY, int facing) {
+		super("./FireBall1.png", x, y, w, h, dX, dY, facing);
 		m_facing = facing;
-		range = 1;
+		range = 25;
 		// TODO Auto-generated constructor stub
 	}*/
-	public NullProjectile() {
-	}
+	public Fireball(){}
 	@Override
 	public void tick(int maxw, int maxh) {
 		m_ticks++;

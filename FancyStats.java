@@ -11,9 +11,22 @@ public class FancyStats extends JPanel implements IGameView{
 	JProgressBar mana;
 	  List<IGameObject> m_objects;
 	  Hero placeholder;
-	  public FancyStats(List<IGameObject> objects)
+	  public FancyStats()
 	  {
 		
+	  }
+	@Override
+	public void tick() {
+		health.setValue(placeholder.getHealth());
+	}
+
+	@Override
+	public JPanel getJPanel() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+	@Override
+	public void setConstructor(List<IGameObject> objects) {
 	    m_objects = objects;
 	   
 	    for(int i = 0; i < m_objects.size(); i++){
@@ -37,16 +50,6 @@ public class FancyStats extends JPanel implements IGameView{
 	    health.setString("Health");
 	    add(health, BorderLayout.WEST);
 	    add(mana, BorderLayout.EAST);
-	  }
-	@Override
-	public void tick() {
-		health.setValue(placeholder.getHealth());
-	}
-
-	@Override
-	public JPanel getJPanel() {
-		// TODO Auto-generated method stub
-		return this;
 	}
 
 }

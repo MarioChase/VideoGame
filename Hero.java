@@ -7,12 +7,14 @@ import javax.imageio.ImageIO;
 
 abstract public class Hero extends Character {
 	protected int mana;
-	public Hero(String sprite, int x, int y, int w, int h, int dX, int dY) {
+	/*public Hero(String sprite, int x, int y, int w, int h, int dX, int dY) {
 		super(sprite, x, y, w, h, dX, dY);
 		obj_type = "hero";
+	}*/
+
+	public Hero(){
+		obj_type = "hero";
 	}
-
-
 	@Override
 	public void keyReleased(char c) {
 		switch (c) {
@@ -28,7 +30,6 @@ abstract public class Hero extends Character {
 		return mana;
 	}
 	public void collisionAction(IGameObject a){
-		System.out.println(a.getType());
 		if(a.getType().equalsIgnoreCase("enemy")){
 			this.health -= 10;
 		}

@@ -46,5 +46,11 @@ public class GameView extends JPanel implements IGameView
     public JPanel getJPanel()
     { return this; }
 
+	@Override
+	public void setConstructor(List<IGameObject> objects) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

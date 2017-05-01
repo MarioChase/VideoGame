@@ -1,13 +1,16 @@
 
 public class TestProjectile extends Projectile {
 
-	public TestProjectile(int x, int y, int w, int h, int dX, int dY, int facing) {
+/*	public TestProjectile(int x, int y, int w, int h, int dX, int dY, int facing) {
 		super("./Arrow/arrow (4).png", x, y, w, h, dX, dY, facing);
 		m_facing = facing;
-		range = 50;
+		
 		// TODO Auto-generated constructor stub
-	}
-
+	}*/
+public TestProjectile(){
+	range = 50;
+	this.setImage("./Arrow/arrow (4).png");
+}
 	@Override
 	public void tick(int maxw, int maxh) {
 		m_ticks++;

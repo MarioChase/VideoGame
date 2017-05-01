@@ -1,13 +1,15 @@
 
 public class Rock extends Projectile {
 
-	public Rock(int x, int y, int w, int h, int dX, int dY, int facing) {
+	/*public Rock(int x, int y, int w, int h, int dX, int dY, int facing) {
 		super("./Rock.png", x, y, w, h, dX, dY, facing);
-		m_facing = facing;
-		range = 50;
+		
 		// TODO Auto-generated constructor stub
+	}*/
+	public Rock() {
+		this.setImage("./Rock.png");
+		range = 10;
 	}
-
 	@Override
 	public void tick(int maxw, int maxh) {
 		m_ticks++;
