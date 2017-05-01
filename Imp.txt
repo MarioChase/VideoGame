@@ -1,0 +1,16 @@
+./ImpWalkRight/ImpWalkRight (1).png
+./ImpWalkRight/ImpWalkRight (2).png
+./ImpWalkRight/ImpWalkRight (3).png
+./ImpWalkRight/ImpWalkRight (4).png
+./ImpWalkLeft/ImpWalkLeft (1).png
+./ImpWalkLeft/ImpWalkLeft (2).png
+./ImpWalkLeft/ImpWalkLeft (3).png
+./ImpWalkLeft/ImpWalkLeft (4).png
+./ImpWalkDown/ImpWalkDown (1).png
+./ImpWalkDown/ImpWalkDown (2).png
+./ImpWalkDown/ImpWalkDown (3).png
+./ImpWalkDown/ImpWalkDown (4).png
+./ImpWalkUp/ImpWalkUp (1).png
+./ImpWalkUp/ImpWalkUp (2).png
+./ImpWalkUp/ImpWalkUp (3).png
+./ImpWalkUp/ImpWalkUp (4).png

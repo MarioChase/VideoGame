@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainFrame extends JFrame
 {
@@ -22,8 +23,8 @@ public class MainFrame extends JFrame
     int interval = 100;
 
     // model
-    List<IGameObject> objects = new ArrayList<IGameObject>();
-    objects.add(Factory.getInstance().createEnemy(100, 100, 30, 30, 5, 5));
+    List<IGameObject> objects = Collections.synchronizedList(new ArrayList<IGameObject>());
+    objects.addAll(Factory.getInstance().createEnemy(100, 100, 30, 50, 5, 5));
     objects.add(Factory.getInstance().createHero(10, 100, 30, 50, 5, 5));
 
     // view

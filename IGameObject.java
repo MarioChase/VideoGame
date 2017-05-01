@@ -7,7 +7,9 @@ public interface IGameObject
   public BufferedImage getImage();
   public Rectangle getRectangle();
   public int getX();
+  public void setX(int x);
   public int getY();
+  public void setY(int y);
   public int getW();
   public int getH();
   public int getDX();
@@ -15,6 +17,6 @@ public interface IGameObject
   public boolean hasCollided(IGameObject a);
   public void collisionAction(IGameObject a);
   public String getType();
-  public void keyPressed(char c);
+  public int keyPressed(char c);
 public void keyReleased(char c);
 }

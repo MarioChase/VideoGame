@@ -28,70 +28,70 @@ abstract public class Hero extends Character {
 		return mana;
 	}
 	public void collisionAction(IGameObject a){
-		if(hasCollided(a) == true){
-			System.out.println(a.getType());
+		System.out.println(a.getType());
+		if(a.getType().equalsIgnoreCase("enemy")){
+			this.health -= 10;
 		}
 	}
 	@Override
-	public void keyPressed(char ch) {
+	public int keyPressed(char ch) {
 		int interval = move.size() / 4;
 		switch (ch) {
 		case 'a': {
 			m_dX = -5;
 			m_dY = 0;
+			facing = 1;
 			animate(m_ticks % (move.size() / 4) + (interval));
-			break;
+			return 0;
 		}
 		case 'd': {
 			m_dX = 5;
 			m_dY = 0;
+			facing = 0;
 			animate(m_ticks % (move.size() / 4));
-			break;
+			return 0;
 		}
 		case 'w': {
 			m_dX = 0;
 			m_dY = -5;
+			facing = 2;
 			animate(m_ticks % move.size() / 4 + (interval * 3));
-			break;
+			return 0;
 		}
 		case 's': {
 			m_dX = 0;
 			m_dY = 5;
+			facing = 3;
 			animate(m_ticks % move.size() / 4 + (interval * 2));
-			break;
+			return 0;
 		}
 		
 		case 'q': {
 			ability1();
-			break;
+			return 1;
 		}
 		case 'e': {
 			ability2();
-			break;
+			return 2;
 		}
 		case ' ': {
 			ability3();
-			break;
+			return 3;
 		}
 		default: {
 			m_dX = 0;
 			m_dY = 0;
+			return 0;
 		}
 		}
 
 	}
 
-	public void animate(int frame) {
-		try {
-			m_image = ImageIO.read(new File(move.get(frame)));
-		} catch (IOException ex) {
-			throw new Error(ex);
-		}
-	}
+	
 
-	abstract public void ability1();
+	abstract public IGameObject ability1();
 
-	abstract public void ability2();
+	abstract public IGameObject ability2();
 
-	abstract public void ability3();
+	abstract public IGameObject ability3();
 }

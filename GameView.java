@@ -1,7 +1,10 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.util.List;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GameView extends JPanel implements IGameView
 {
@@ -14,16 +17,17 @@ public class GameView extends JPanel implements IGameView
       setFocusable(true);
       requestFocusInWindow();
       m_objects = objects;
+      
     }
 
     @Override
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-
+        
         Image bufferedImage = createImage(getWidth(), getHeight());
         Graphics2D buffer = (Graphics2D) bufferedImage.getGraphics();
-
+        
         for (IGameObject obj : m_objects)
         {
           buffer.drawImage(obj.getImage(), obj.getX(), obj.getY(), obj.getW(), obj.getH(), this);

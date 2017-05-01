@@ -2,32 +2,28 @@ public class TestEnemy extends Enemy
 {
   public TestEnemy(int x, int y, int w, int h, int dX, int dY)
   {
-    super("./ball.png", x, y, w, h, dX, dY);
+    super("elf.png", x, y, w, h, dX, dY);
+    loadImages("./SkeletonMageImages.txt");
+    animate(0);
+    pattern = new Patrol();
+    
   }
 
   @Override
   public void tick(int maxw, int maxh)
-  {
-    m_x = m_x + m_dX;
-    m_y = m_y + m_dY;
-    
-    if (m_x > maxw)
-      m_x = 0;
-    else if (m_x < 0)
-      m_x = maxw;
-
-    if (m_y > maxh)
-      m_y = 0;
-    else if (m_y < 0)
-      m_y = maxh;
+  {	
+	m_ticks ++;
+	pattern.Movement(this, m_ticks);
+    wrapAround(maxw,maxh);
 
   }
 
-@Override
-public void keyPressed(char ch) {
-	// TODO Auto-generated method stub
-	
-}
+  @Override
+	public int keyPressed(char ch) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 @Override
 public void keyReleased(char c) {

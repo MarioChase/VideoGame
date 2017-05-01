@@ -12,9 +12,12 @@ public class Factory implements IFactory
   private Factory() {}
 
   @Override
-  public IGameObject createEnemy(int x, int y, int w, int h, int dX, int dY)
+  public ArrayList<IGameObject> createEnemy(int x, int y, int w, int h, int dX, int dY)
   {
-    return new TestEnemy(x, y, w, h, dX, dY);
+	  ArrayList<IGameObject> enemies = new ArrayList<IGameObject>();
+	  enemies.add(new Imp(0, 0, w, h, dX, dY));
+	  enemies.add(new TestEnemy(0, 0, w, h, dX, dY));
+    return enemies;
   }
 
   @Override
