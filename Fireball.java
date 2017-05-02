@@ -1,13 +1,11 @@
 
 public class Fireball extends Projectile {
 
-/*	public Fireball(int x, int y, int w, int h, int dX, int dY, int facing) {
-		super("./FireBall1.png", x, y, w, h, dX, dY, facing);
-		m_facing = facing;
-		range = 25;
-		// TODO Auto-generated constructor stub
-	}*/
-	public Fireball(){}
+
+	public Fireball(){
+		range = 50;
+		this.setImage("./fireball1.png");
+	}
 	@Override
 	public void tick(int maxw, int maxh) {
 		m_ticks++;

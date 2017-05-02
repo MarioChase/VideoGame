@@ -1,12 +1,7 @@
 
 public class TestProjectile extends Projectile {
 
-/*	public TestProjectile(int x, int y, int w, int h, int dX, int dY, int facing) {
-		super("./Arrow/arrow (4).png", x, y, w, h, dX, dY, facing);
-		m_facing = facing;
-		
-		// TODO Auto-generated constructor stub
-	}*/
+
 public TestProjectile(){
 	range = 50;
 	this.setImage("./Arrow/arrow (4).png");

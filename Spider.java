@@ -9,7 +9,7 @@ public class Spider extends Enemy{
 		 loadImages("./SpiderImages.txt");
 		    animate(0);
 		    health = 25;
-		    pattern = new Patrol();
+		    pattern = new Wandering();
 	}
 	@Override
 	public void tick(int maxw, int maxh) {

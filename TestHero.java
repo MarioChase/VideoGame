@@ -16,6 +16,9 @@ public class TestHero extends Hero {
 	}
 	@Override
 	public void tick(int maxw, int maxh) {
+		if(mana < 100){
+			mana += 2;
+		}
 		m_ticks++;
 		m_x += m_dX;
 		m_y += m_dY;
@@ -26,14 +29,21 @@ public class TestHero extends Hero {
 
 	@Override
 	public IGameObject ability1() {
+		if ((mana -= 1) > 0) {
+			mana -= 5;
 		Projectile item = new TestProjectile();
 		item.setConstructor(this.getX(), this.getY(), 20, 20, 0, 0, this.facing);
-		return item;
+		return item;}
+		else{
+			return new NullProjectile();
+		}
 	}
 
 	@Override
 	public IGameObject ability2() {
 		// TODO Auto-generated method stub
+		if ((mana -= 30) > 0) {
+			mana -= 30;
 		switch(this.facing){
 		case 0:
 			m_dX -= 20;
@@ -47,7 +57,7 @@ public class TestHero extends Hero {
 		case 3:
 			m_dY -= 20;
 			break;
-		}
+		}}
 		return new NullProjectile();
 	}
 

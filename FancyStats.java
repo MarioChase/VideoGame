@@ -18,6 +18,7 @@ public class FancyStats extends JPanel implements IGameView{
 	@Override
 	public void tick() {
 		health.setValue(placeholder.getHealth());
+		mana.setValue(placeholder.getMana());
 	}
 
 	@Override

@@ -15,12 +15,9 @@ public class Factory implements IFactory
   public Enemy createEnemy(int x, int y, int w, int h, int dX, int dY, String classname)
   {
 	  Enemy m = null;
-//	  Enemy n = null;
 	  Class c = null;
-	  /*Class b = null;*/
 	try {
 		c = Class.forName(classname);
-		/*b = Class.forName("");*/
 	} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -28,8 +25,6 @@ public class Factory implements IFactory
 	  try {
 		m = (Enemy) c.newInstance();
 		m.setConstructor(x, y, w, h, dX, dY);
-		/*n = (Enemy) b.newInstance();
-		n.setConstructor(x, y, w, h, dX, dY);*/
 	} catch (InstantiationException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -40,8 +35,6 @@ public class Factory implements IFactory
 	  ArrayList<IGameObject> enemies = new ArrayList<IGameObject>();
 	  enemies.add(m);
 	  enemies.get(0).setConstructor(x, y, w, h, dX, dY);
-/*	  enemies.add(n);
-	  enemies.get(1).setConstructor(x, y, w, h, dX, dY);*/
     return m;
   }
 

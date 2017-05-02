@@ -1,4 +1,4 @@
-TestHero
-Golem
-Imp
+Teemo
+Spider
+TestEnemy
 FancyStats

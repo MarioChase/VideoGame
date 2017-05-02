@@ -38,6 +38,9 @@ public class GameController implements ActionListener, IGameController, KeyListe
 
 	@Override
 	public void startGame() {
+		JOptionPane.showMessageDialog(null, "Welcome to Aaron's dungeon crawler, "
+				+ "last as long as you can in the dungeon." + "\n If you defeat all the monsters you win!" + 
+				"\n Use wasd to move up, left, down, and right. \n Use q to use your projectile weapon \n Use e to use your mobility option");
 		m_timer.start();
 	}
 
