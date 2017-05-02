@@ -16,8 +16,8 @@ public class HeroStats extends JPanel implements IGameView{
 	public void tick() {
 		if (m_objects.size()> 1)
 	    {
-	        m_status.setText(String.format("Health: %s Mana: %s ",
-	          placeholder.health, placeholder.mana));
+	        m_status.setText(String.format("Health: %s Mana: %s Time: %s",
+	          placeholder.health, placeholder.mana, placeholder.m_ticks));
 	    }
 	}
 

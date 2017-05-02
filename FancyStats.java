@@ -9,6 +9,7 @@ import javax.swing.JProgressBar;
 public class FancyStats extends JPanel implements IGameView{
 	JProgressBar health;
 	JProgressBar mana;
+	JLabel time = new JLabel();
 	  List<IGameObject> m_objects;
 	  Hero placeholder;
 	  public FancyStats()
@@ -19,6 +20,7 @@ public class FancyStats extends JPanel implements IGameView{
 	public void tick() {
 		health.setValue(placeholder.getHealth());
 		mana.setValue(placeholder.getMana());
+		 time.setText("Time: " + placeholder.m_ticks);
 	}
 
 	@Override
@@ -49,6 +51,9 @@ public class FancyStats extends JPanel implements IGameView{
 	    health.setStringPainted(true);
 	    mana.setString("Mana");
 	    health.setString("Health");
+	    
+	    time.setText("Time: " + placeholder.m_ticks);
+	    add(time, BorderLayout.CENTER);
 	    add(health, BorderLayout.WEST);
 	    add(mana, BorderLayout.EAST);
 	}
